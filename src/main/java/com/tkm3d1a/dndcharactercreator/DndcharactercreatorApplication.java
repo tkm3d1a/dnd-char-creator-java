@@ -1,6 +1,6 @@
 package com.tkm3d1a.dndcharactercreator;
 
-import com.tkm3d1a.dndcharactercreator.Character.PlayerCharacter;
+import com.tkm3d1a.dndcharactercreator.PlayerCharacter.PlayerCharacter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.tkm3d1a.dndcharactercreator.Character;
+package com.tkm3d1a.dndcharactercreator.PlayerCharacter;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
