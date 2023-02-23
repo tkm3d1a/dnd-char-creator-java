@@ -1,16 +1,28 @@
 package com.tkm3d1a.dndcharactercreator.CharacterRace;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-// TODO: convert to JPA entity
+@Data
+@Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(
+                name = "UniqueRaceName",
+                columnNames = {"raceName"})}
+)
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class CharacterRace {
 
-    //TODO: Ensure this is unique, only one race should be made for each race name enum
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int race_id;
+
+    @Enumerated(EnumType.STRING)
     private CharacterRaceEnum raceName;
 
     private double constitutionMod;

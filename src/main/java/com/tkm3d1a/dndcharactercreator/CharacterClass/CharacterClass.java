@@ -1,16 +1,28 @@
 package com.tkm3d1a.dndcharactercreator.CharacterClass;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-// TODO: convert to JPA entity
+@Data
+@Entity
+@Table(
+        uniqueConstraints = {@UniqueConstraint(
+                name = "UniqueClassName",
+                columnNames = {"className"})}
+)
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class CharacterClass {
 
-    //TODO: Ensure this is unique, only one character class should be made for each class name enum
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int class_id;
+
+    @Enumerated(EnumType.STRING)
     private CharacterClassEnum className;
 
     private double constitutionMod;
