@@ -20,7 +20,7 @@ public class CharacterClass {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int class_id;
+    private int classID;
 
     @Enumerated(EnumType.STRING)
     private CharacterClassEnum className;
